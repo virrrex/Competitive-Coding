@@ -1,0 +1,14 @@
+HELP.md
+
+.classpath
+
+.DS_Store
+.exe
+.class
+.pl
+temp*
+tcs*
+oggy
+
+### VS Code ###
+.vscode/
