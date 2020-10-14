@@ -6,7 +6,7 @@ HELP.md
 *.exe
 *.class
 *.pl
-temp*
+*temp*
 tcs*
 oggy*
 p102*
