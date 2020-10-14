@@ -1,14 +1,14 @@
 HELP.md
 
-*.classpath
+.classpath
 
-*.DS_Store
-*.exe
-*.class
-*.pl
+.DS_Store
+.exe
+.class
+.pl
 temp*
 tcs*
 oggy.cpp
 
 ### VS Code ###
-*.vscode/
+.vscode/
