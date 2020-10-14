@@ -10,6 +10,7 @@ temp*
 tcs*
 oggy*
 p102*
-
+input*
+output*
 ### VS Code ###
 .vscode/
