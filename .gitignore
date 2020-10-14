@@ -3,12 +3,12 @@ HELP.md
 .classpath
 
 .DS_Store
-.exe
-.class
-.pl
+*.exe
+*.class
+*.pl
 temp*
 tcs*
-oggy.cpp
+oggy*
 p102*
 
 ### VS Code ###
