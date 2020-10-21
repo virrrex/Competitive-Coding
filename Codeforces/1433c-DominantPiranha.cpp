@@ -41,20 +41,23 @@ int main()
                 same = a[i];
             if(a[i] != same)
                 same = 0;
-            if(mx <= a[i]){
-                mx = a[i];
-                ans = i;
-            }
-        }
+            mx = max(mx, a[i]);
+        } 
         if(same != 0){
             cout<<-1<<endl;
             continue;
         }
-        for(int i=n-2; i>=0; i--){
-            if(mx != a[i])
-                ans = i+1;
+        f(i,n){
+            if(a[i] == mx){
+                if(i>0 && i<n-1 && (a[i+1] != a[i] || a[i-1] != a[i]))
+                {ans = i+1; break;}
+                else if(i==0 && a[i+1] != a[i])
+                {ans = i+1; break;}
+                else if(i==n-1 && a[i-1] != a[i])
+                {ans = i+1; break;}
+            }
         }
-        cout<<ans+1<<endl;
+        cout<<ans<<endl;
     }
 
     return 0;
