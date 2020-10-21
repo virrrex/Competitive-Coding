@@ -24,7 +24,7 @@ typedef vector<string>  vs;
 typedef vector<pii>     vpii;
 typedef vector<pll>     vpll;
 const double PI = 3.141592653589793238460;
-
+ 
 int main()
 {
     rex;
