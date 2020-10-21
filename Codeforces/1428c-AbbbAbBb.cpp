@@ -26,7 +26,7 @@ typedef vector<pll>     vpll;
 const double PI = 3.141592653589793238460;
 
 // ABBB AB BB
-
+ 
 int main()
 {
     rex;

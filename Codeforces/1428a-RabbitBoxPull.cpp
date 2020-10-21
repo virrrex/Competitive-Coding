@@ -26,7 +26,7 @@ typedef vector<pll>     vpll;
 const double PI = 3.141592653589793238460;
 
 //rabbit box pull
-
+ 
 int main()
 {
     rex;
