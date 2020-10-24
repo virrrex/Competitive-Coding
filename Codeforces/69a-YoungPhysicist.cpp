@@ -32,12 +32,11 @@ int main()
     int t; cin>>t;
     vi x(t), y(t), z(t);
     int sumx = 0, sumy = 0, sumz = 0;
-    f(i,t){
+    f(i,t)
         cin>>x[i]>>y[i]>>y[i];
-        sumx += x[i];
-        sumy += y[i];
-        sumz += z[i];
-    }
+    sumx = accumulate(all(x), 0);
+    sumy = accumulate(all(y), 0);
+    sumz = accumulate(all(z), 0);
     if(sumx == 0 && sumy == 0 && sumz == 0)
         cout<<"YES\n";
     else 
