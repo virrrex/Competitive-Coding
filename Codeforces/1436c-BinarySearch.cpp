@@ -25,13 +25,6 @@ typedef vector<pii>     vpii;
 typedef vector<pll>     vpll;
 const double PI = 3.141592653589793238460;
 
-long long multiplyNumbers(int n) {
-    if (n>=1)
-        return (n*multiplyNumbers(n-1)) % mod;
-    else
-        return 1;
-}
-
 int main()
 {
     rex;
