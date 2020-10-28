@@ -1,5 +1,6 @@
 #define _GLIBCXX_DEBUG  //debug mode, remove when submitting code due to time complexity issues
 #include<iostream>
+#include<iomanip>
 #include<vector>
 #include<set>
 #include <map>
@@ -10,6 +11,11 @@ using namespace std;
 bool f(int x, int y)
 {
     return x>y;
+}
+
+int fun(int x, int y)
+{
+    return x*y;
 }
 
 void vectorDemo()
@@ -23,7 +29,12 @@ void vectorDemo()
         cout<<num[i]<<" ";
     cout<<endl;
     cout<<"Max ele: "<<*max_element(num.begin(), num.end())<<endl;
-
+    cout<<"Sum: "<<accumulate(num.begin(), num.end(), 0)<<endl;     // 0 is starting value
+    cout<<"Multiplied value: "<<accumulate(num.begin(), num.end(), 1, fun); // accepts fun also
+    cout<<endl;
+    int partsum[8];     //needs array instead of vector
+    partial_sum(num.begin(), num.end(), partsum);   // does partial sum of num and stores it in partsum
+    cout<<"Partial Sum: "; for(int i: partsum) cout<<i<<" "; cout<<endl;  // accepts fun also
     //num.clear();                  //it will delete all elements of vector
     //num.empty();                  //returns True or False if the vector is empty or not
     //num.erase(3,6); num.erase(3); //erases elements at given index or range of indexes (accepts iterators only)     
@@ -163,6 +174,7 @@ int main()
     int gcd1 = __gcd(a,b);
     int gcd2 = gcd(a,b);
     int lcm = a*b/gcd1;
-    cout<<"gcd1: "<<gcd1<<"  gcd2: "<<gcd2<<"\tLCM: "<<lcm;
+    cout<<"gcd1: "<<gcd1<<"  gcd2: "<<gcd2<<"\tLCM: "<<lcm<<endl;
+    cout<<fixed<<setprecision(10)<<(double)2/3;
     return 0;
 }
