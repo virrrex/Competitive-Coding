@@ -163,6 +163,15 @@ int gcd(int a, int b)
     else 
         return gcd(b, a%b);
 }
+int gcdIterative(int a, int b)
+{
+    while(b != 0){
+        int rem = a%b;
+        a = b;
+        b = rem;
+    }
+    return a;
+}
 
 int main()
 {
@@ -173,8 +182,9 @@ int main()
     int a = 24, b = 38;
     int gcd1 = __gcd(a,b);
     int gcd2 = gcd(a,b);
+    int gcd3 = gcdIterative(a,b);
     int lcm = a*b/gcd1;
-    cout<<"gcd1: "<<gcd1<<"  gcd2: "<<gcd2<<"\tLCM: "<<lcm<<endl;
+    cout<<"gcd1: "<<gcd1<<"  gcd2: "<<gcd2<<"  gcdIterative: "<<gcd3<<"\tLCM: "<<lcm<<endl;
     cout<<fixed<<setprecision(10)<<(double)2/3;
     return 0;
 }
