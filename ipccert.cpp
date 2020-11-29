@@ -30,7 +30,7 @@ int main()
     rex;
 
     int n, m, k;
-    cin>>n>>m>>k; 
+    cin>>n>>m>>k;
     vi sum(n);
     vi minute(n);
     f(i,n){
