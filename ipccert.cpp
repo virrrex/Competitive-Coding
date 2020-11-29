@@ -42,6 +42,7 @@ int main()
         sum[i] = s;
         cin>>minute[i];
     }
+    
     int ans = 0;
     f(i,n){
         if(sum[i] >= m && minute[i] <= 10)
