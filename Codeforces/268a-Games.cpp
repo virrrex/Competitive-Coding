@@ -29,7 +29,7 @@ int main()
 {
     rex;
 
-    int t, ans = 0; cin>>t;
+    int t, ans = 0; cin>>t; 
     
     vi home(t);
     map<int, int> guest;
