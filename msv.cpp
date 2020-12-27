@@ -31,20 +31,26 @@ int main()
     int t; cin>>t;
     while (t--)
     {
-        int n, x; cin>>n;
-        vi a; set <int> star;
+        int n, ans = 0, x; cin>>n;
+        vi a(1000000, 0), _div[1000001];
         f(i,n)
         {
-            cin>>x, a.pb(x); int c = 0;
-            for(int j = i; j>0; j--)
-            {
-                if(a[j-1] % a[i] == 0)
-                    c++;
+            cin>>x;
+            ans = max(ans, a[x]);
+            if(_div[x].size() == 0){
+                for(int i=1; i*i<=x; i++)
+                    if(x%i == 0){
+                        _div[x].pb(i) , a[i]++;
+                        if(i * i != x)
+                        _div[x].pb(x / i) , a[x/i]++;
+                    }
             }
-            star.insert(c);
+            else{
+                for(int d : _div[x])
+                    a[d]++;
+            }
         }
-        auto it = star.end(); it--;
-        cout<<*it<<endl;    
+        cout<<ans<<endl;    
     }
     
     return 0;
