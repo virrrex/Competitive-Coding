@@ -20,9 +20,9 @@ typedef vector<pii>     vpii;
 typedef vector<pll>     vpll;
 const double PI = 3.141592653589793238460;
 
-double distance(int x1, int y1, int x2, int y2)
+long double distance(int x1, int y1, int x2, int y2)
 {
-    double ans;
+    long double ans;
     ans = sqrt( pow((x1-x2),2) + pow((y1-y2),2) );
     return ans;
 }
@@ -36,41 +36,32 @@ int main()
     {
         ll x, y; cin>>x>>y;
         int n, m, k; cin>>n>>m>>k; 
-        double min = 10000000000, d1, d2, d3, e1, e2, e3;
-        vll red(2*n), green(2*m), blue(2*k);
-        f(i,2*n) cin>>red[i];
-        f(i,2*m) cin>>green[i];
-        f(i,2*k) cin>>blue[i];
+        const int N=5010;
+        int a[N],b[N],c[N],d[N],e[N],f[N];
+        long double ab1[N],ab2[N],cd1[N],cd2[N];
         
-        for(int i=0; i<2*n; i+=2)
-        {
-            d1 = distance(red[i], red[i+1], x, y);
-            for(int j = 0; j<2*m; j+=2)
-            {
-                d2 = distance(red[i], red[i+1], green[j], green[j+1]);
-                for(int l = 0; l<2*k; l+=2)
-                {
-                    d3 = distance(green[j], green[j+1], blue[l], blue[l+1]);
-                    if((d1 + d2 + d3)<min)
-                        min = d1 + d2 + d3;
-                }
-            }
+        f(i,n) cin>>a[i]>>b[i];
+        f(i,m) cin>>c[i]>>d[i];
+        f(i,k) cin>>e[i]>>f[i];
+        
+        f(i,n){
+            ab1[i] = distance(x,y,a[i],b[i]);
+            ab2[i] = 1e10;
+            f(j,k)
+                ab2[i] = min(ab2[i], distance(a[i],b[i],e[j],f[j]));
         }
-        for(int i=0; i<2*m; i+=2)
-        {
-            e1 = distance(green[i], green[i+1], x, y);
-            for(int j = 0; j<2*n; j+=2)
-            {
-                e2 = distance(green[i], green[i+1], red[j], red[j+1]);
-                for(int l = 0; l<2*k; l+=2)
-                {
-                    e3 = distance(red[j], red[j+1], blue[l], blue[l+1]);
-                    if((e1 + e2 + e3)<min)
-                        min = e1 + e2 + e3;
-                }
-            }
+        f(i,m){
+            cd1[i] = distance(x,y,c[i],d[i]);
+            cd2[i] = 1e10;
+            f(j,k)
+                cd2[i] = min(cd2[i], distance(c[i],d[i],e[j],f[j]));
         }
-        cout<<fixed<<setprecision(10)<<min<<endl;
+        long double ans = 1e10;
+        f(i,n)
+            f(j,m)
+            ans = min({ans, ab1[i]+distance(a[i],b[i],c[j],d[j])+cd2[j],
+                         cd1[j]+distance(c[j],d[j],a[i],b[i])+ab2[i]});
+        cout<<fixed<<setprecision(10)<<ans<<endl;
     }
     
     return 0;
