@@ -186,5 +186,9 @@ int main()
     int lcm = a*b/gcd1;
     cout<<"gcd1: "<<gcd1<<"  gcd2: "<<gcd2<<"  gcdIterative: "<<gcd3<<"\tLCM: "<<lcm<<endl;
     cout<<fixed<<setprecision(10)<<(double)2/3;
+    string s = "rex";
+    cout<<"\ns[0] is Upper: "<<(isupper(s[0])? "Yes\n": "No\n");
+    cout<<"s[0] is Lower: "<<(islower(s[0])? "Yes\n": "No\n");
+    transform(s.begin(), s.end(), s.begin(), ::toupper); cout<<s<<endl;
     return 0;
 }
