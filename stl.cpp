@@ -6,6 +6,7 @@
 #include <map>
 #include<algorithm>
 #include <list>
+#include<stdio.h>
 using namespace std;
 #pragma GCC optimize "trapv"    //in case of int overflow, codechef will give RE instead of WA
 bool f(int x, int y)
@@ -175,6 +176,7 @@ int gcdIterative(int a, int b)
 
 int main()
 {
+    // dont use fast io if using printf
     setDemo();
     vectorDemo();
     mapDemo();
@@ -190,5 +192,6 @@ int main()
     cout<<"\ns[0] is Upper: "<<(isupper(s[0])? "Yes\n": "No\n");
     cout<<"s[0] is Lower: "<<(islower(s[0])? "Yes\n": "No\n");
     transform(s.begin(), s.end(), s.begin(), ::toupper); cout<<s<<endl;
+    printf("%05d\n", 34);   // prints 00035, useful when needed to print time in hh:mm, use %02d
     return 0;
 }
