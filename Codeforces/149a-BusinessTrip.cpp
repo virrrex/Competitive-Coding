@@ -38,7 +38,7 @@ int main()
     sortall(a);
     int i = 11, ans = 0;
     while(i>=0 && k>0){
-        k -= a[i];
+        k -= a[i]; 
         ans++;
         i--;
     }
