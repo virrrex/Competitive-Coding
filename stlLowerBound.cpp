@@ -20,5 +20,10 @@ int main()
         else
             cout<<"No "<<(low-a.begin()+1)<<endl;
     }
+
+    //  get whole sentence as input in a string
+    string input;
+    getline(cin, input);
+
     return 0;
 }
