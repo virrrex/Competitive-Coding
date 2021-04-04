@@ -41,24 +41,24 @@ int main()
         int cnt = 0;
         f(i,n) cnt += (s[i] == '1');
         if(cnt % 2 == 1 || s[0] == '0' || s.back() == '0') {
-            cout << "NO\n";
+            cout<<"NO\n";
             continue;
         }
         string a, b;
         int k = 0;
         bool flip = false;
-        for(int i = 0; i < n; i++) {
+        f(i,n){
             if(s[i] == '1') {
-                a.push_back(2 * k < cnt ? '(' : ')');
-                b.push_back(a.back());  
+                a.pb(2 * k < cnt ? '(' : ')');
+                b.pb(a.back());  
                 k++;
             }else {
-                a.push_back(flip ? '(' : ')');
-                b.push_back(flip ? ')' : '(');
+                a.pb(flip ? '(' : ')');
+                b.pb(flip ? ')' : '(');
                 flip = !flip;
             }
         }
-        cout << "YES\n" << a << '\n' << b << '\n';
+        cout<<"YES\n"<<a<<nl<<b<<nl;
         
     }
 
