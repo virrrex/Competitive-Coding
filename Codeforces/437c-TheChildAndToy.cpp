@@ -40,8 +40,7 @@ int main()
         vtx.pb({x,i+1});
         vmap[i+1] = x;
     }
-    sortall(vtx);
-    reverse(vtx.begin(), vtx.end());
+    sort(all(vtx), greater<pii>());
     vi adj[v+1];
     f(i,e){
         int a, b; cin>>a>>b;
@@ -53,10 +52,9 @@ int main()
     for(auto it: vtx){
         if(!vis[it.ss]){
             vis[it.ss] = 1;
-            for(auto x: adj[it.ss]){
+            for(auto x: adj[it.ss])
                 if(!vis[x])
                     ans += (ll)vmap[x];
-            }
         }
     }
     cout<<ans<<nl;
