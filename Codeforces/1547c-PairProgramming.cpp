@@ -52,11 +52,11 @@ int main()
             }
             else if(a[x] <= k && x<n){
                 ans.pb(a[x]);
-                x++; k++;
+                x++;
             }
             else if(b[y] <= k && y<m){
                 ans.pb(b[y]);
-                y++; k++;
+                y++;
             }
             else{
                 cout<<"-1\n";
