@@ -21,9 +21,15 @@ int main()
             cout<<"No "<<(low-a.begin()+1)<<endl;
     }
 
-    //  get whole sentence as input in a string
+    // get whole sentence as input in a string
     string input;
     getline(cin, input);
+
+    // remove all occurences of a char in a string
+    string test = "remove spaces from this string.";
+    char c = ' ';
+    test.erase(remove(test.begin(), test.end(), c), test.end());
+    cout<<test<<"\n";
 
     return 0;
 }
