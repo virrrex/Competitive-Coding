@@ -1,5 +1,17 @@
 #include<bits/stdc++.h>
 using namespace std;
+
+string to_string(int n){
+    ostringstream ss;
+    ss << n;
+    return ss.str();
+}
+int stoi(string s){
+    int i;
+    istringstream(s)>>i;
+    return i;
+}
+
 int main()
 {
     /* For each query you have to print "Yes" (without the quotes) if the number is present
