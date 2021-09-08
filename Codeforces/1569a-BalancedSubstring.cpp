@@ -29,12 +29,9 @@ typedef vector<pll>     vpll;
 const double PI = 3.141592653589793238460;
 
 pii subString(string s, int n){
-    f(i,n)
-        for(int len=1; len <= n-i; len++){
-            string t = s.substr(i, len);
-            if(count(all(t), 'a') == count(all(t), 'b'))
-                return {i+1, i+len};
-        }
+    f(i,n-1)
+        if(s[i] != s[i+1])
+            return {i+1, i+2};
     return {-1,-1};
 }
 
