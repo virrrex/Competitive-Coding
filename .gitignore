@@ -7,6 +7,7 @@ HELP.md
 *.exe
 *.class
 *.pl
+*.bin
 *temp*
 tcs*
 oggy*
@@ -15,3 +16,5 @@ input*
 output*
 ### VS Code ###
 .vscode/
+Codeforces/.cph
+.cph/
