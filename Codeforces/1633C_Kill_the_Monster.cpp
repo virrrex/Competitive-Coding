@@ -35,35 +35,12 @@ int main()
     int t; cin>>t;
     while(t--)
     {
-        // if rc <= rm, c wins;     
-        // rc=3, rm=2, rqh=(rc-1)*dm+1, rqd=hm/rm + 1(if hm%rm !=0)
         ll hc, dc, hm, dm; cin>>hc>>dc>>hm>>dm;
-        ll rc = hm/dc + (hm%dc == 0 ? 0 : 1);
-        ll rm = hc/dm + (hc%dm == 0 ? 0 : 1);
         ll coins, wdefence, ahealth; cin>>coins>>wdefence>>ahealth;
-        if(rc <= rm){
-            cout<<"YES\n";
-            continue;
-        }
-        ll rqh = (rc-1)*dm + 1;
-        ll rqd = hm/rm + (hm%rm == 0 ? 0 : 1);
-        // case1: increase defence only
-        ll coin1 = (wdefence ? ((rqd-dc) / wdefence + ((rqd-dc)%wdefence != 0)) : LLONG_MAX);
-
-        // case2: increase health only
-        ll coin2 = (ahealth ? ((rqh-hc) / ahealth + ((rqh-hc)%ahealth != 0)) : LLONG_MAX);
         
-        ll ans = min(coin1, coin2);
-        if(ans <= coins){
-            cout<<"YES\n";
-            continue;
-        }
-
-        // case3: increase both optimally
         bool flag = false;
         ll k = coins;
-        for(ll i=1; i<(k/2 + 1); i++){
-            // i defence+, k-i health+
+        for(ll i=0; i<(k/2 + 1); i++){
             ll nd = i*wdefence + dc;
             ll nh = (k-i)*ahealth + hc;
             ll nrc = hm/nd + (hm%nd != 0);
