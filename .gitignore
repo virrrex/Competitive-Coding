@@ -8,6 +8,7 @@ HELP.md
 *.class
 *.pl
 *.bin
+*.out
 *temp*
 tcs*
 oggy*
