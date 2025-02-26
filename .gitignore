@@ -19,3 +19,5 @@ output*
 .vscode/
 Codeforces/.cph
 .cph/
+
+!*.*
