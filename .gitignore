@@ -16,8 +16,12 @@ p102*
 input*
 output*
 ### VS Code ###
-.vscode/
+.vscode/*
 Codeforces/.cph
 .cph/
 
 !*.*
+
+**.out
+input**
+output**
